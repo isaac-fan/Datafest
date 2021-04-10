@@ -1,0 +1,34 @@
+---
+title: "EDA"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries}
+library(readr)
+library(tidyverse)
+```
+
+```{r data}
+us_19 <- read_csv("~/Datafest/US/us_19.csv")
+```
+
+```{r eda}
+ggplot(data = us_19, aes(x = factor(THC_NMU)))+
+  geom_bar(fill = "dark green")
+```
+
+```{r}
+nmu_users <- us_19 %>% 
+  filter(ILL_USE == 1)
+ggplot(data = nmu_users, aes(x = factor(THC_NMU)))+
+  geom_bar(fill = "dark green")
+```
+
+```{r}
+
+```
+
